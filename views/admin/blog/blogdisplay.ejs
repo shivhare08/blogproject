@@ -1,0 +1,62 @@
+<%- include('../../layout/header.ejs') %>
+<%- include('../../components/component.ejs') %>
+<section class="blog">
+    <div class="container">
+        <div class="row">
+            
+            <table class="table table-bordered table-responsive">
+                <% if(message.length > 0 ){ %>
+                    <div  class="alert alert-success">
+                       <h5> <%= message %> </h5>
+                    </div>
+                <% } %>
+                
+                <thead class="text-center">
+                    <tr>
+                        <th colspan="2"><a href="/admin/addblog"><button class="btn text-light" style=" background: #049eb7;">Add Blogs</button></a></th>
+                    </tr>
+                    <tr>
+                        <th colspan="5" class="bg-light text-danger">  <h5 style="font-family: serif;">  Blog</h5></th>
+                    </tr>
+                    
+                    <tr>
+                        <th class="bg-light shadow-lg" style="font-family: serif;">TITLE</th>
+
+                        <th style="background: whitesmoke; font-family: serif;">DESCRIPTION</th>
+
+                        <th class="bg-light shadow-lg" style="font-family: serif;">Images</th>
+
+                        <th style="background: whitesmoke; font-family: serif;">Name</th>
+
+                        <th class="bg-light shadow-lg" style="font-family: serif;">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody class="text-center">
+                    <% d.forEach((item)=>{ %>
+                        <tr>
+                            <td class="align-middle" style="background: whitesmoke;"><p style="font-size: 14px;"><%= item.createdAt.toLocaleDateString() %></p><h6><%= item.title %></h6></td>
+    
+                            <td class=" bg-light shadow-lg"><p><%= item.description.slice(0,70) %></p></td>
+
+                            <td class="align-middle" style="background: whitesmoke;">
+                                <img src="<%= item.image.url %>" class="img-fluid w-25" >
+                            </td>
+    
+                            <td class="align-middle bg-light shadow-lg"><h6><%= item.name %></h6></td>
+    
+                            <td class="align-middle" style="background: whitesmoke;">
+                                <a href="/edit/<%= item._id %>"><button class="btn bg-success text-light"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                <a href="/view/<%= item._id %>"><button class="btn text-light" style="background:#049eb7 ;"><i class="fa-solid fa-eye"></i></button></a>
+                                <a href="/delete/<%= item._id %>"><button class="btn bg-danger text-light"><i class="fa-solid fa-trash"></i></button></a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+            
+        </div>
+    </div>
+</section>
+<%- include('../../layout/footer.ejs') %>

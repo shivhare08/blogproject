@@ -1,0 +1,22 @@
+<%- include('../layout/header.ejs') %>
+<!-- Add blog start -->
+<section class="addBlog">
+    <div class="container mt-5">
+        <div class="row adbg">
+            <% blogdata.forEach((item)=>{ %>
+                <div class="col-md-3 col-6"><img src="<%= item.image.url %>" class="img-fluid w-75 shadow-lg mt-3">
+                    <h4 class="text-center mt-2"><%= item.title %></h4>
+                    <h6 class="text-info text-center"><%= item.createdAt.toLocaleDateString() %></h6>
+                    <h6 class="text-info text-center"><%= item.name %></h6>
+                    <h6 class="text-center"><%= item.description.slice(0,20) %></h6>
+                    <center><a href="/readmore/<%= item._id %>" class="nav-link"><button class="btn bg-danger text-light">Read more</button></a></button></center>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Add blog end -->
+<%- include('../layout/footer.ejs') %>

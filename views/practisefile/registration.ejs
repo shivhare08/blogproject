@@ -1,0 +1,37 @@
+<%- include('../layout/header.ejs') %>
+<section class="login">
+    <div class="container">
+        <div class="row">
+            <h2 style="font-family: serif;" class="text-danger"><i class="fa-solid fa-person"></i> Create your account</h2> 
+            <% if(message.length > 0){ %>
+                <div class="alert alert-danger">
+                    <%= message %>
+                </div>
+            <% } %>
+            <form class="form-control mt-2" action="/admininsert" method="POST">
+                <label style="font-family: serif;"><h5>Username</h5></label>
+                <input type="text" placeholder="Type here.." class="form-control" name="username">
+                <br>
+                <label style="font-family: serif;"><h5>E-mail</h5></label>
+                <input type="email" placeholder="Type here.." class="form-control" name="email">
+                <br>
+                <label style="font-family: serif;"><h5>Password</h5></label>
+                <input type="Password" placeholder="Type here.." class="form-control" name="password">
+                <br>
+                <label style="font-family: serif;"><h5>Confirm Password</h5></label>
+                <input type="Password" placeholder="Type here.." class="form-control" name="confpassword">
+                <br>
+                <div class="row">
+                    <div class="col-md-8">
+                        <button class="btn bg-danger text-light"><i class="fa-solid fa-user-plus"></i> Signup</button>
+                    </div>
+                    <div class="col-md-4">
+                        <h6 style="color: blue;"><a href="/login" class="nav-link"><i class="fa-solid fa-arrow-right"></i> Login</a> </h6>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<%- include('../layout/footer.ejs') %>

@@ -1,0 +1,53 @@
+<%- include('../layout/header.ejs') %>
+<!-- coursels part start -->
+<section class="banner bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="carousel slide" data-bs-ride="carousel" id="b">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#b" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#b" data-bs-slide-to="1"></button>
+                </div>
+                <div class="carousel-inner">
+                    <center><div class="carousel-item active" data-bs-interval="2000">
+                        <img src="image/b1.jpg" class="w-50 img-fluid";>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="image/3.jpg" class="img-fluid"; style="width: 45.7%;">
+                    </div></center>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- coursels part end -->
+
+<br>
+
+
+<!-- Add blog start -->
+<h2 class="mt-3 text-center" style="font-family: serif;"><i class="fa-solid fa-right-to-bracket"></i> Read the recent blogs</h2>
+
+    <section class="addBlog">
+        <div class="container mt-5">
+            <div class="row adbg">
+                <% d.forEach((item)=>{ %>
+                    <div class="col-md-3 col-6 mt-3"><img src="<%= item.image.url %>" class="img-fluid w-75 shadow-lg mt-2">
+                        <h4 class="text-center mt-2"><%= item.title %></h4>
+                        <h6 class="text-info text-center"><%= item.createdAt.toLocaleDateString() %></h6>
+                        <h6 class="text-info text-center"><%= item.name %></h6>
+                        <h6 class="text-center"><%= item.description %></h6>
+                        <center><a href="/readmore/<%= item._id %>" class="nav-link"><button class="btn bg-danger text-light">Read more</button></a></button></center>
+                    </div>
+                <% }) %>
+                <br><br>
+                <a href="/blog" class="nav-link mt-3" style="margin-left: 85%;" > <button class="btn bg-dark text-light">See All</button> </a>
+                
+            </div>
+        </div>
+    </section>
+
+<!-- Add blog end -->
+
+
+<%- include('../layout/footer.ejs') %>

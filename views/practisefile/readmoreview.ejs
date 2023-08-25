@@ -1,0 +1,14 @@
+<%- include('../layout/header.ejs') %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6"><center><img src="<%= vc.image.url %>" class="img-fluid w-25"></center></div>
+        <div class="col-md-6">
+            <h4>Name : <span><%= vc.catrelated %></span></h4>
+            <h4>Title : <%= vc.title %></h4>
+            <h5>Description : <%= vc.description %></h5>
+        </div>
+    </div>
+</div>
+
+<%- include('../layout/footer.ejs') %>

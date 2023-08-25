@@ -1,0 +1,35 @@
+<%- include('../../layout/header.ejs') %>
+<%- include('../../components/component.ejs') %>
+
+<section class="addblog">
+    <div class="container">
+        <div class="row">
+            <h3 style="font-family: serif;" class="text-danger text-center">Edit Category</h3>
+            <a href="/admin/categorydisplay" class="nav-link"><button class="btn bg-danger text-light" style="margin-left: 2%;">Back</button></a>
+            <div class="col-md-6 mt-3  shadow-lg">
+                <center> <img src="<%= e.image.url %>" class="img-fluid w-75"> </center>
+            </div>
+            <div class="col-md-6 mt-2">
+                <form action="/catupdate/<%= e._id %>" method="POST" enctype="multipart/form-data">
+                    <label style="font-family: serif;"><h5>Category Related</h5></label>
+                    <input type="text" name="catrelated" value="<%= e.catrelated %>" placeholder="Enter Name"
+                            class="form-control"><br>
+                    <label  style="font-family: serif;"><h5>Title</h5></label>
+                    <input type="text" name="title" value="<%= e.title %>" placeholder="Title"
+                            class="form-control"><br>
+                    <label  style="font-family: serif;"><h5>Description</h5></label>
+                    <input type="text" name="description" value="<%= e.description %>" placeholder="Description"
+                            class="form-control"><br> 
+                            
+                    <div class="row">
+                        <div col-md-6><label style="font-family: serif;"><h5>Image :</h5></label></div>
+                        <div col-md-6><input type="file" name="image" class="form-control"><br></div>
+                    </div>                          
+                    <a href="" class="nav-link"><button class="btn text-light" style="background:#049eb7;">Save change</button></a>               
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../../layout/footer.ejs') %>

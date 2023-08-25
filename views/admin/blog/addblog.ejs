@@ -1,0 +1,34 @@
+<%- include('../../layout/header.ejs') %>
+<%- include('../../components/component.ejs') %>
+
+<section class="addblog">
+    <div class="container">
+        <div class="row">
+            <h3 style="font-family: serif;" class="text-danger text-center">Add Blog</h3>
+            <a href="/admin/blogdisplay" class="nav-link"><button class="btn bg-danger text-light" style="margin-left: 2%;">Back</button></a>
+            <div class="col-md-6 mt-3  shadow-lg">
+                <img src="/image/3.jpg" class="img-fluid">
+            </div>
+            <div class="col-md-6 mt-2">
+                <form action="/fillblogdata" method="POST" enctype="multipart/form-data" >
+                    <label style="font-family: serif;"><h5>Name</h5></label>
+                    <input type="text" name="name" placeholder="Enter Name" class="form-control"><br>
+                    
+                    <label  style="font-family: serif;"><h5>Title</h5></label>
+                    <input type="text" name="title" placeholder="Title" class="form-control"><br>
+                    
+                    <label  style="font-family: serif;"><h5>Description</h5></label>
+                    <textarea type="text" name="description" rows="2" placeholder="Description"  class="form-control"></textarea><br>
+                    
+                    <div class="row">
+                        <div col-md-6><label style="font-family: serif;"><h5>Image :</h5></label></div>
+                        <div col-md-6><input type="file" name="image" class="form-control"><br></div>
+                    </div>
+
+                    <a href="" class="nav-link"><button class="btn text-light" style="background:#049eb7;">Submit</button></a>             
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../../layout/footer.ejs') %>

@@ -1,0 +1,50 @@
+<%- include('../layout/header.ejs') %>
+    <section class="categrious">
+        <div class="container bg-light">
+            <div class="row">
+                <div class="col-md-7">
+                    <center>
+                        <img src="<%= r.image.url %>" class="img-fluid w-50 mt-3">
+                        <h4>Name : <%= r.name %>
+                        </h4>
+                        <h4>Title : <%= r.title %>
+                        </h4>
+                        <h4>Description : <%= r.description %>
+                        </h4>
+                    </center>
+                </div>
+                <div class="col-md-5">
+                    <div class="bg-dark mt-3">
+                        <h4 class="text-center" style="color:whitesmoke;">Recent Blog</h4>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <% rb.forEach((recentblog)=>{ %>
+                            
+                            <div class="col-md-6">
+                                <center><img src="<%= recentblog.image.url %>" class="img-fluid w-50"></center>
+                            </div>
+                        
+                            <div class="col-md-6 ">
+                                <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="text-danger" ><span style="color: black;">Name  :</span><%= recentblog.name %></h5>
+                                <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="text-danger" ><span style="color: black;">title :</span><%= recentblog.title %></h5>
+                                <p><span style="color:#60748b"><%= recentblog.description %></span></p>
+                                <a href="/viewblog/<%= recentblog._id %>" class="nav-link"><button class="btn bg-danger text-light">open</button></a>
+                                <hr>
+                            </div>
+                        <% }) %>
+                    </div> <!-- row end -->
+                
+
+
+                    <div class="bg-dark">
+                        <h4 class="text-center" style="color:whitesmoke;">category</h4>
+                    </div>
+                    <% c.forEach((cat)=>{  %>
+                        <hr><h4 class="readhover"><a href="/viewcat/<%= cat._id %>" class="nav-link text-center" style="padding-left: 3%;"><%= cat.catrelated %></a></h4>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../layout/footer.ejs') %>

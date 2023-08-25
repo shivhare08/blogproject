@@ -1,0 +1,46 @@
+<%- include('../../layout/header.ejs') %>
+<%- include('../../components/component.ejs') %>
+
+<div class="container mt-4">
+    <div class="row">
+           <table class="table table-bordered table-responsive">
+            <thead class="text-center">
+                <tr>
+                    <th colspan="5" class="bg-light "><h2 style="font-family: serif;">Contact</h2></th>
+                </tr>
+
+                <tr>
+                    <th class="bg-light text-center shadow-lg" style="font-family: serif;"><h3>Name</h3></th>
+
+                    <th class="text-center" style="background: whitesmoke; font-family: serif;"><h3>Phone</h3></th>
+
+                    <th class="bg-light shadow-lg text-center" style="font-family: serif;"><h3>E-mail</h3></th>
+
+                    <th class="text-center" style="background: whitesmoke; font-family: serif;"><h3>Message</h3></th>
+
+                    <th class="bg-light shadow-lg text-center" style="font-family: serif;"><h3>Action</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% d.forEach((item)=>{ %>
+                    <tr>
+                        <td class="align-middle text-center" style="background: whitesmoke;"><h5><%= item.name %></h5></td>
+
+                        <td class="align-middle bg-light shadow-lg text-center"><h5><%= item.email %></h5></td>
+                
+                        <td class="align-middle text-center" style="background: whitesmoke;"><h5><%= item.phone %></h5></td>
+
+                        <td class="align-middle text-center bg-light shadow-lg"> <a href="/viewmessage/<%= item._id %>" class="nav-link"> <h5><%= item.message.slice(0,10) %>...</h5> </a></td>
+
+                        <td>
+                            <center><a href="/deletecontact/<%= item._id %>"><button class="btn bg-danger text-light"><i class="fa-solid fa-trash"></i></button></a></center>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+
+            </table>
+    </div>
+</div>
+
+<%- include('../../layout/footer.ejs') %>

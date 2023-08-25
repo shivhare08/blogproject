@@ -1,0 +1,44 @@
+<%- include('../layout/header.ejs') %>
+
+
+<section class="contact mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/image/blog.png" class="img-fluid w-100" style="margin-top: 21%;">
+            </div>
+
+            <div class="col-md-8 bg-danger">
+                <div style="width: 100%;height: 45px; background: #1e0c0cbd;">
+                    <h3 class="text-light" style="font-family: serif; padding-left: 8px;">Contact Us</h3>
+                </div>
+                    <br>
+                <form class="form-control" action="/fillcontact" method="POST" >
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Type here..">
+                    
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Type here..">
+                    
+                    <label>Phone</label>
+                    <input type="number" name="phone" class="form-control" placeholder="Type here..">
+                    
+                    <label>Message</label>
+                    <textarea type="text" name="message" rows="2" class="form-control" placeholder="Type here.."></textarea>
+                    <br>
+                    <button class="btn bg-danger text-light"><i class="fa-solid fa-arrow-right"></i> Submit</button>
+                </form>     
+                <br>          
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+
+
+
+    <%- include('../layout/footer.ejs') %>

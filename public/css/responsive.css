@@ -1,0 +1,109 @@
+@media(max-width:767px){
+    
+    .navbar-toggler {
+    	border: none;
+    	margin-left: 97%;
+    	margin-top: -12%;
+    }
+    .ab{
+    	margin-top: 5%;
+    }
+	.navbar-nav{
+		background: #f4f5f5;
+	}
+	.navbar-nav li a{
+		color:white;
+		font-family: serif;		
+	}
+
+	
+	.navbar-nav li{
+		text-align: center;
+	}
+
+	.footer h6{
+		font-size: 16px;
+	}
+}
+
+@media(max-width:580px){
+	.navbar-toggler{
+		margin-left: 80%;
+	}
+	.footer h6{
+		font-size: 14px;
+	}
+}
+
+@media(max-width:576px){
+	.firstimage{
+		width: 100%;
+		align-content: center;
+	}
+}
+
+@media(max-width:490px){
+	.addBlog h4{
+		font-size: 20px!important;	
+	}
+
+	.aboutBlog h6{
+		font-size: 12px;
+	}
+	.ourTeam h6{
+		font-size: 12px;
+	}
+
+	.adbg h6{
+		font-size: 12px;
+	}
+	/*.adbg button{
+		width: 40%;
+		height: auto;
+	}*/
+}
+
+
+@media(max-width:310px){
+	.addBlog h4{
+		font-size: 18px!important;
+	}
+	.footer h6{
+		font-size: 12px;
+	}
+	.navbar-toggler{
+    	margin-top: -15%;
+    }
+
+}
+
+
+
+@media(max-width:1199px){
+	
+	.carousel-item{
+		padding-top: -5%;
+	}
+}
+
+@media(max-width:224px){
+	.navbar-toggler{
+		margin-left: 74%;
+		margin-top: -23%;
+	}
+}
+
+@media(max-width:250px){
+	
+	.navbar-toggler{
+    	margin-top: -18%;
+    }
+}
+
+@media(max-width:570px){
+	.dashboard h5{
+		font-size: 16px;
+		text-align: center;
+	}
+}
+

@@ -1,0 +1,65 @@
+<%- include('../layout/header.ejs') %>
+
+    <div class="container mt-4">
+        <div class="row">
+            <table class="table table-bordered table-responsive">
+                <thead class="text-center">
+                    <tr>
+                        <th colspan="4" class="bg-light ">
+                            <h2 style="font-family: serif;">Category</h2>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th class="bg-light text-center shadow-lg" style="font-family: serif;">
+                            <h3>Category related</h3>
+                        </th>
+
+                        <th class="text-center" style="background: whitesmoke; font-family: serif;">
+                            <h3>Title</h3>
+                        </th>
+
+                        <th class="bg-light shadow-lg text-center" style="font-family: serif;">
+                            <h3>Image</h3>
+                        </th>
+
+                        <th class="text-center" style="background: whitesmoke; font-family: serif;">
+                            <h3>Description</h3>
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% catdata.forEach((item)=>{ %>
+                        <tr>
+                            <td class="align-middle text-center" style="background: whitesmoke;">
+                                <h5>
+                                    <%= item.catrelated %>
+                                </h5>
+                            </td>
+
+                            <td class="align-middle bg-light shadow-lg text-center">
+                                <h5>
+                                    <%= item.title %>
+                                </h5>
+                            </td>
+
+                            <td class="align-middle text-center" style="background: whitesmoke;">
+                                <center><img src="<%= item.image.url %>" class="img-fluid w-25" ></center>
+                            </td>
+
+                            <td class=" text-center bg-light shadow-lg"> <a
+                                    href="" class="nav-link">
+                                    <p>
+                                        <%= item.description %>...
+                                    </p>
+                                </a></td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <%- include('../layout/footer.ejs') %>

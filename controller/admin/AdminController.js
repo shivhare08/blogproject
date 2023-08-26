@@ -6,6 +6,7 @@ class AdminController{
     static Dashboard = async (req,res)=>{
         try{
             const {username , email} = req.admin
+            //console.log(req.admin)
             res.render('admin/dashboard.ejs',{n:username,e:email})
         }catch(error){
             console.log(error)

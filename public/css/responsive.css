@@ -107,3 +107,36 @@
 	}
 }
 
+@media(max-width:991px){
+	.dash div a h5{
+		font-size: 17px;
+	}
+}
+
+@media(max-width:365px){
+	.des{
+		display: none;
+	}
+}
+
+@media(max-width:520px){
+	.contactweb{
+		display: none;
+	}
+
+	.contactphn{
+		display: block;
+	}
+}
+
+@media(max-width:400px){
+	.contactphn{
+		margin-left: -5%;
+	}
+}
+/* 
+@media(max-width:276px){
+	.contactphn{
+		margin: ;
+	}
+} */

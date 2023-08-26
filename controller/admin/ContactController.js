@@ -36,6 +36,15 @@ class ContactController{
         }
     }
 
+    static viewcontact = async(req,res)=>{
+        try{
+            const contact = await ContactModel.findById(req.params.id)
+            res.render('admin/contact/viewcontact.ejs',{c:contact})
+        }catch(error){
+            console.log(error)
+        }
+    }
+
     static viewmessage = async(req,res)=>{
         try{
             const message = await ContactModel.findById(req.params.id)

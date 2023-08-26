@@ -1,5 +1,5 @@
 <%- include('../../layout/header.ejs') %>
-<%- include('../../components/component.ejs') %>
+<center> <%- include('../../components/component.ejs') %> </center>
 <section class="blog">
     <div class="container">
         <div class="row">
@@ -20,9 +20,9 @@
                     </tr>
                     
                     <tr>
-                        <th class="bg-light shadow-lg" style="font-family: serif;">TITLE</th>
+                        <th class="bg-light shadow-lg" style="font-family: serif;">Title</th>
 
-                        <th style="background: whitesmoke; font-family: serif;">DESCRIPTION</th>
+                        <th class="des" style="background: whitesmoke; font-family: serif;">Description</th>
 
                         <th class="bg-light shadow-lg" style="font-family: serif;">Images</th>
 
@@ -37,7 +37,7 @@
                         <tr>
                             <td class="align-middle" style="background: whitesmoke;"><p style="font-size: 14px;"><%= item.createdAt.toLocaleDateString() %></p><h6><%= item.title %></h6></td>
     
-                            <td class=" bg-light shadow-lg"><p><%= item.description.slice(0,70) %></p></td>
+                            <td class="des bg-light shadow-lg"><p><%= item.description.slice(0,70) %></p></td>
 
                             <td class="align-middle" style="background: whitesmoke;">
                                 <img src="<%= item.image.url %>" class="img-fluid w-25" >

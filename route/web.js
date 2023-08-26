@@ -57,6 +57,7 @@ router.post('/fillcatdata',admin_auth,CategoryController.fillcatdata)
 router.get('/admin/contact',admin_auth,ContactController.contact)
 router.post('/fillcontact',admin_auth,ContactController.fillcontact)
 router.get('/deletecontact/:id',admin_auth,ContactController.deletecontact)
+router.get('/viewcontact/:id',admin_auth,ContactController.viewcontact)
 router.get('/viewmessage/:id',admin_auth,ContactController.viewmessage)
 
 

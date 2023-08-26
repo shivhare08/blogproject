@@ -18,15 +18,16 @@
                         <th colspan="5" class="bg-light text-danger"><h5 style="font-family: serif;"> Category</h5></th>
                     </tr>
                     <tr>
-                        <th class="bg-light shadow-lg" style="font-family: serif;">Image</th>
 
-                        <th style="background: whitesmoke; font-family: serif;">Category Related</th>
+                        <th style="background: whitesmoke; font-family: serif;">Related</th>
 
-                        <th class="bg-light shadow-lg" style="font-family: serif;">Category Title</th>
+                        <th class="bg-light shadow-lg" style="font-family: serif;">Title</th>
 
-                        <th style="background: whitesmoke; font-family: serif;">About Category</th>
+                        <th style="background: whitesmoke; font-family: serif;">Image</th>
 
-                        <th class="bg-light shadow-lg" style="font-family: serif;">Action</th>
+                        <th class="des" class="bg-light shadow-lg" style="font-family: serif;">About</th>
+
+                        <th style="background: whitesmoke; font-family: serif;">Action</th>
 
                         
                     </tr>
@@ -34,17 +35,18 @@
                 <tbody class="text-center">
                     <% d.forEach((item)=>{ %>
                         <tr>
-                            <td class="align-middle" style="background: whitesmoke;">
-                                <img src="<%= item.image.url %>" class="img-fluid w-25" >
-                            </td>
 
                             <td class="align-middle bg-light shadow-lg"><h6><%= item.catrelated %></h6></td>
     
                             <td class="align-middle" style="background: whitesmoke;"><h6><%= item.title %></h6></td>
+
+                            <td class="align-middle bg-light shadow-lg">
+                                <img src="<%= item.image.url %>" class="img-fluid w-25" >
+                            </td>
     
-                            <td class="align-middle bg-light shadow-lg"><h6><%= item.description %></h6></td>
+                            <td class="align-middle des" style="background: whitesmoke;"><h6><%= item.description %></h6></td>
     
-                            <td class="align-middle" style="background: whitesmoke;">
+                            <td class="align-middle bg-light shadow-lg">
                                 <a href="/catedit/<%= item._id %>"><button class="btn bg-success text-light"><i class="fa-solid fa-pen-to-square"></i></button></a>
                                 <a href="/catview/<%= item._id %>"><button class="btn text-light" style="background:#049eb7 ;"><i class="fa-solid fa-eye"></i></button></a>
                                 <a href="/catdelete/<%= item._id %>"><button class="btn bg-danger text-light"><i class="fa-solid fa-trash"></i></button></a>

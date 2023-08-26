@@ -83,7 +83,7 @@ class CategoryController {
             const imgId = data.image.public_id
             // console.log(imgId)
             const file = req.files.image
-            // console.log(file)
+            //console.log(file)
             const mycloud = await cloudinary.uploader.upload(file.tempFilePath, {
                 folder: "catupdatedimg"
             })

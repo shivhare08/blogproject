@@ -124,17 +124,18 @@ class BlogController{
             // console.log(myfile)
             // console.log(imgid)
             await cloudinary.uploader.destroy(imgid)
+            
             const updata = await BlogModel.findByIdAndUpdate(req.params.id,{
                 title:req.body.title,
                 name:req.body.name,
                 description:req.body.description,
                 image:{
                     public_id : updtimg.public_id,
-                    url : updtimg.secure_url
-                }
+                    url : updtimg.secure_url,
+                },
             })
-            // await updata.save()
-            // res.redirect('/admin/blogdisplay')
+            await updata.save()
+            res.redirect('/admin/blogdisplay')
         }catch(error){
             console.log(error)
         }

@@ -17,10 +17,12 @@ const blogSchema = new mongoose.Schema({
     },
     image:{
         public_id:{
-            type:String
+            type:String,
+            required:true
         },
         url:{
-            type:String
+            type:String,
+            required:true
         }
     }
 },{timestamps:true})
